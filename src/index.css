@@ -1,13 +1,118 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  margin: 0px;
+  padding: 0px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.nav{
+  top: 0;
+  position: sticky;
+  background-color: white;
+  z-index: 10;
+  height: 5vh;
+  padding: 25px;
+}
+
+
+.c-list > ul:nth-child(1) {
+  height: 11rem;
+}
+li:has(> .empty-widget){
+  width: 300px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+/* CSS for modal */
+
+.modal-content {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: white;
+  transition: transform 0.3 ease-in-out;
+  transform: translateX(100%);
+  margin-top: 50px;
+}
+
+.modal-content--open {
+  transform: translateX(0);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content-wrapper {
+  padding: 20px;
+  height: 100%;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* Tabs Styles */
+.tab-button {
+  cursor: pointer;
+  border-radius: 5px 5px 0 0;
+  background-color: #f1f1f1;
+  margin-right: 5px;
+  flex: 1;
+  text-align: center;
+}
+
+.tab-button--active {
+  background-color: white;
+  border-bottom: 5px solid blue;
+}
+
+.tab-content {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 100%;
+    height: 100%;
+    transform: translateX(0);
+
+  }
+  
+  .modal-overlay {
+    background: rgba(0, 0, 0, 0.7); /* Darken overlay for mobile */
+  }
+}
+
+/* Tabs as dropdown for mobile devices */
+@media (max-width: 768px) {
+  .tabs {
+    display: none; 
+  }
+
+  /* Show dropdown on mobile */
+  .dropdown {
+    display: block;
+  }
 }
