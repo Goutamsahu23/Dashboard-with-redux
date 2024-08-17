@@ -1,16 +1,18 @@
 # Getting Started
 
-unzip or clone the project from github.
+unzip the file or clone the project from github.
+
+### `https://github.com/Goutamsahu23/Dashboard-with-redux.git`
 
 ## Install node_modules
 
-In the project directory, you can run:
+In the project directory, run:
 
-### `npm install`
+### `npm install` in the terminal
 
 then run:
 
-### `npm start`
+### `npm start` in the terminal
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
